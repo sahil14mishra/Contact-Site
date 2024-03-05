@@ -19,7 +19,7 @@ It will provide you the localhost link , on clicking it Contact-Site will open l
 <br>
 Google sheet is integrated using nocodeapi . 
 <br>
-Google sheet link - https://docs.google.com/spreadsheets/d/e/2PACX-1vSaxghZ7fT_qwht_Yd0fc9LnFHh2_HOnP0LAtjAfZ_QRQ4E2PI-JSzO8Fb1_uG-gh3uy7iOdNZ7gYxn/pubhtml
+Google sheet link - https://docs.google.com/spreadsheets/d/115iJ57nl8yFcXKIeaEwfkx-oC1WCQXT58eopCO9MKSI/edit?usp=sharing
 <br>
 #Additional
 <br>
