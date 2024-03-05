@@ -11,12 +11,12 @@ const ContactForm = () => {
   })
   const { name, phone, email, message } = data
 
-  const handleChange = e =>
-  setData({ ...data, [e.target.name]: e.target.value })
-
+  const handleChange = e =>{
+  setData({ ...data, [e.target.name]: e.target.value });
+  }
 
   const handleSubmit = async e => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       await fetch("https://v1.nocodeapi.com/sahil14mishra/google_sheets/yxtWjLtcmfehPAWl?tabId=Page1", {
         method: "POST",
@@ -24,11 +24,20 @@ const ContactForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify([[name,phone, email, message]]),
-      })
+      });
+  
+      // Reset form fields after successful submission
+      setData({
+        name: "",
+        phone: "",
+        email: "",
+        message: "",
+      });
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-  }
+  };
+  
 
   return (
     <section className={styles.container}>
@@ -36,15 +45,15 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit}>
           <div className={styles.form_control}>
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" onChange={handleChange} name="name" autoComplete="name" />
+            <input type="text" id="name" onChange={handleChange} value={name} name="name" autoComplete="name" />
           </div>
           <div className={styles.form_control}>
             <label htmlFor="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" onChange={handleChange} autoComplete="tel" />
+            <input type="tel" id="phone" name="phone" value={phone} onChange={handleChange} autoComplete="tel" />
           </div>
           <div className={styles.form_control}>
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" onChange={handleChange} name="email" autoComplete="email" />
+            <input type="email" id="email" value={email} onChange={handleChange} name="email" autoComplete="email" />
           </div>
           <div className={styles.form_control}>
             <label htmlFor="text">Text</label>
